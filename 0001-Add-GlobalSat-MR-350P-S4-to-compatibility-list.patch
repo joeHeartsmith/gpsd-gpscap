@@ -1,0 +1,48 @@
+From 191ee10e4efeb6ecd42759ebe64ee999af8b0cc4 Mon Sep 17 00:00:00 2001
+From: Joe Jamison <joe@smaklab.com>
+Date: Sat, 28 Nov 2020 11:38:07 -0600
+Subject: [PATCH] Add GlobalSat MR-350P-S4 to compatibility list.
+
+Signed-off-by: Joe Jamison <joe@smaklab.com>
+---
+ gpscap.ini | 24 ++++++++++++++++++++++++
+ 1 file changed, 24 insertions(+)
+
+diff --git a/gpscap.ini b/gpscap.ini
+index 621af1a252c4..e8c9f6a13d36 100644
+--- a/gpscap.ini
++++ b/gpscap.ini
+@@ -1362,6 +1362,30 @@ notes = May work inside wood frame buildings.  PPS pulse is only 1uS wide,
+       (no suffix P) that does NOT have PPS.
+ logs = mr-350p
+ 
++[MR-350P S4]
++date = 2020-11-28
++interfaces = RS-232
++nmea = 3.01
++packaging = mouse
++pps = True
++pps_accuracy = 50ns
++time_offset = ?
++rating = excellent
++submitter = Joe Jamison <joe@smaklab.com>
++techdoc = https://www.globalsat.com.tw/en/product-199953/GPS-Receiver-MR-350S4.html
++tested = 3.3
++type = device
++uses = SiRF-4
++vendor = GlobalSat
++notes = Some SiRFstar IV chips require a firmware update to fix PPS output.
++        GlobalSat does not seem to be aware of this problem, and the patch
++        must be sourced elsewhere. A copy is available from the Internet
++        Archive: <a href='https://archive.org/details/f-gps-4-r-1402051'>
++        Timer_Init1PPSOut_Patch</a>.  The supplied cable set (BR305-RS232)
++        does not pass the PPS pin through.  PPS is TTL and must be externally
++        converted.
++logs = mr-350p-s4
++
+ [TripNav TN-200]
+ type = device
+ vendor = GlobalSat
+-- 
+2.20.1
+
